@@ -13,7 +13,7 @@ public class FirstScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        transform.Rotate();
+        if (Input.GetKeyDown(KeyCode.W))
+            transform.Rotate(0,0,0);
 	}
 }
