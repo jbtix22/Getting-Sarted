@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour {
 
-    public float rotateSpeed; 
-    
+    public float moveSpeed = 10f;
+
     // Use this for initialization
     void Start () {
-        int flipon = 1;{
 
-        }
+
     }
     
     // Update is called once per frame
     void Update () {
-        int flipon = 1;{
 
-        }
+        if (Input.GetKey(KeyCode.Space))
+            transform.Rotate(10, 0, 0);
+        if (Input.GetKeyDown(("w")))
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        if (Input.GetKeyDown(("a")))
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        if (Input.GetKeyDown(("d")))
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        if (Input.GetKeyDown(("s")))
+            transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
 
-        flipon = 1;
 
-        if(Input.GetKeyDown("space"))
-            while (flipon == 1)
-                transform.Rotate(10,0,0);
-                
-            
+
     }
 }
